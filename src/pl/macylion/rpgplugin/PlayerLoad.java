@@ -22,6 +22,9 @@ public class PlayerLoad implements Listener{
 	@SuppressWarnings("deprecation")
 	private void loadData(Player player) {
 		JavaPlugin plugin = Main.getPlugin(Main.class);
+		//Points
+		if(plugin.getConfig().get(player.getUniqueId() + ".points") == null)
+			plugin.getConfig().set(player.getUniqueId() + ".points", 0);
 		//Max Health Points
 		if(plugin.getConfig().get(player.getUniqueId() + ".hp") == null)
 				plugin.getConfig().set(player.getUniqueId() + ".hp" ,
