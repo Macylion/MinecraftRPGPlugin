@@ -8,7 +8,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class PlayerLoad implements Listener{
+public class PlayerLoad implements Listener {
+	private final Main plugin;
+	
+	public PlayerLoad(Main plugin) {
+		this.plugin = plugin;
+	}
+	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		this.loadData(e.getPlayer());
@@ -16,10 +22,9 @@ public class PlayerLoad implements Listener{
 	
 	@EventHandler
 	public void onPlayerRespawn(PlayerRespawnEvent e) {
-		this.loadData(e.getPlayer());
+		//
 	}
 	
-	@SuppressWarnings("deprecation")
 	private void loadData(Player player) {
 		JavaPlugin plugin = Main.getPlugin(Main.class);
 		//Points

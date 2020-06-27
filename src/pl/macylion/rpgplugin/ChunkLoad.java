@@ -1,10 +1,6 @@
 package pl.macylion.rpgplugin;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,9 +8,14 @@ import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.potion.PotionType;
 
-public class ChunkLoad implements Listener{
+public class ChunkLoad implements Listener {
+	private final Main plugin;
+	
+	public ChunkLoad(Main plugin) {
+		this.plugin = plugin;
+	}
+	
 	@EventHandler
 	public void onChunkLoad(ChunkLoadEvent e) {
 		
